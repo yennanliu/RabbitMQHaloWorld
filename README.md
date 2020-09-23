@@ -1,5 +1,13 @@
 # RabbitMQHaloWorld
+
 // RabbitMQ hello world project
+- [hello_world](https://github.com/yennanliu/RabbitMQHaloWorld/tree/master/src/main/python/hello_world) - Rabbit hello world intro
+- [work_queues](https://github.com/yennanliu/RabbitMQHaloWorld/tree/master/src/main/python/work_queues) - send msg evenly to diffenert receivers, set up call_back (acknowledgement) policy
+- [publish_subscribe](https://github.com/yennanliu/RabbitMQHaloWorld/tree/master/src/main/python/publish_subscribe) - In this part we'll do something completely different -- we'll deliver a message to multiple consumers. This pattern is known as "publish/subscribe".
+	- A producer is a user application that sends messages.
+	- A queue is a buffer that stores messages.
+	- A consumer is a user application that receives messages.
+	- A broker (exchanger) : The exchange must know exactly what to do with a message it receives
 
 ### Install
 
@@ -39,7 +47,7 @@ rabbitmqctl list_queues
 
 </details>
 
-### Quick start 
+### Quick start (python)
 
 <details>
 <summary>Quick start</summary>
@@ -77,7 +85,22 @@ python src/main/python/work_queues/new_task.py Fourth message....
 python src/main/python/work_queues/new_task.py Fifth message.....
 ```
 
+#### publish_subscribe
+```bash
+# run the receiver
+python src/main/python/publish_subscribe/receive_logs.py > logs_from_rabbit.log
+# or, see the log at screen
+python src/main/python/publish_subscribe/receive_logs.py
+
+# run the sender
+python src/main/python/publish_subscribe/emit_log.py
+
+# verify that the code actually creates bindings and queues as we want
+rabbitmqctl list_bindings
+```
+
+</details>
+
 ### Ref
 - RabbitMQ CLI
 	- https://www.rabbitmq.com/cli.html
-</details>
