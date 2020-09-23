@@ -1,8 +1,10 @@
 # RabbitMQHaloWorld
 // RabbitMQ hello world project
 
-
 ### Install
+
+<details>
+<summary>Install</summary>
 
 #### Docker
 ```bash
@@ -11,7 +13,6 @@ docker run -it -d --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-ma
 ```
 - account/password : guest/guest
 - localhost:15672
-
 
 #### Mac OSX 
 ```bash
@@ -31,9 +32,14 @@ brew services start rabbitmq
 - account/password : guest/guest
 - localhost:15672
 
+</details>
+
 ### Quick start 
 
-##### hello world
+<details>
+<summary>Quick start</summary>
+
+#### hello_world
 ```bash
 # start receiver
 python src/main/python/hello_world/receive.py
@@ -44,3 +50,26 @@ python src/main/python/hello_world/receive.py
 python src/main/python/hello_world/send.py
 # => [x] Sent 'Hello World!'
 ```
+
+#### work_queues
+```bash
+# run 2 workers
+
+# shell 1
+python src/main/python/work_queues/worker.py
+# => [*] Waiting for messages. To exit press CTRL+C
+
+# shell 2
+python src/main/python/work_queues/worker.py
+# => [*] Waiting for messages. To exit press CTRL+C
+
+# create (publish) some msg
+# shell 3
+python src/main/python/work_queues/new_task.py First message.
+python src/main/python/work_queues/new_task.py Second message..
+python src/main/python/work_queues/new_task.py Third message...
+python src/main/python/work_queues/new_task.py Fourth message....
+python src/main/python/work_queues/new_task.py Fifth message.....
+```
+
+</details>
