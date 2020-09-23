@@ -28,15 +28,19 @@ rabbitmq-server
 # II) via brew (in background)
 brew services start rabbitmq
 ```
+- account/password : guest/guest
+- localhost:15672
 
-### Quick start
+### Quick start 
+
+##### hello world
 ```bash
 # start receiver
-python src/main/python/receive.py
+python src/main/python/hello_world/receive.py
 # => [*] Waiting for messages. To exit press CTRL+C
 # => [x] Received 'Hello World!'
 
 # start sender
-python src/main/python/send.py
+python src/main/python/hello_world/send.py
 # => [x] Sent 'Hello World!'
 ```
