@@ -32,6 +32,11 @@ brew services start rabbitmq
 - account/password : guest/guest
 - localhost:15672
 
+```bash
+# list queues
+rabbitmqctl list_queues
+```
+
 </details>
 
 ### Quick start 
@@ -72,4 +77,7 @@ python src/main/python/work_queues/new_task.py Fourth message....
 python src/main/python/work_queues/new_task.py Fifth message.....
 ```
 
+### Ref
+- RabbitMQ CLI
+	- https://www.rabbitmq.com/cli.html
 </details>
