@@ -3,7 +3,7 @@
 // RabbitMQ hello world project
 - [hello_world](https://github.com/yennanliu/RabbitMQHaloWorld/tree/master/src/main/python/hello_world) - Rabbit hello world intro
 - [work_queues](https://github.com/yennanliu/RabbitMQHaloWorld/tree/master/src/main/python/work_queues) - send msg evenly to diffenert receivers, set up call_back (acknowledgement) policy
-- [publish_subscribe](https://github.com/yennanliu/RabbitMQHaloWorld/tree/master/src/main/python/publish_subscribe) - In this part we'll do something completely different -- we'll deliver a message to multiple consumers. This pattern is known as "publish/subscribe".
+- [publish_subscribe](https://github.com/yennanliu/RabbitMQHaloWorld/tree/master/src/main/python/publish_subscribe) - Deliver a message to multiple consumers ("publish/subscribe" pattern).
 	- A producer is a user application that sends messages.
 	- A queue is a buffer that stores messages.
 	- A consumer is a user application that receives messages.
@@ -36,6 +36,9 @@ rabbitmq-server
 
 # II) via brew (in background)
 brew services start rabbitmq
+
+# stop the server
+brew services stop rabbitmq
 ```
 - account/password : guest/guest
 - localhost:15672
