@@ -105,5 +105,11 @@ rabbitmqctl list_bindings
 </details>
 
 ### Ref
+
+<details>
+<summary>Ref</summary>
+	
 - RabbitMQ CLI
 	- https://www.rabbitmq.com/cli.html
+	
+</details>
